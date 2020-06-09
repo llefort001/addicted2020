@@ -1,0 +1,8 @@
+/*style du casse briques*/
+canvas {
+    background: none;
+    display: block;
+    margin: 0 auto;
+    cursor: none;
+
+}

@@ -1,0 +1,12 @@
+/*Animations*/
+
+/*animation d erotation de l'aiguille du compte a rebours'*/
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+
+}

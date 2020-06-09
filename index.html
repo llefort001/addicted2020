@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+
+    <!-- Bootstrap CSS and FontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="main/css/main.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="memory/css/memory.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="main/css/animations.css" rel="stylesheet" media="screen" type="text/css">
+    <link href="casseBriques/css/casseBriques.css" rel="stylesheet" media="screen" type="text/css">
+
+    <title>Addicted</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand mr-auto">
+        <img id="logo" src="img/logoPetit.png" alt="logo">
+    </a>
+    <div class="containerTimer imgTimer">
+        <span class="navbar-text" id="timer">5:00</span>
+        <img id="montre" class="imgTimer" src="img/montre.png" alt="montre"/>
+        <img id="aiguille" src="img/aiguille.png" alt="aiguille de la montre">
+    </div>
+</nav>
+<div class="container-fluid">
+    <!-- Modal -->
+    <div class="modal fade  bd-example-modal-lg" id="modalContact" tabindex="-1" role="dialog"
+         aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalTitle">Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://formspree.io/lucas.lefort.pro@gmail.com"
+                          method="POST">
+                        <div class="form-group">
+                            <label for="prenom" class="col-form-label hidden">Prenom</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prenom"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="nom" class="col-form-label hidden">Nom</label>
+                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-form-label hidden">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label hidden">Message:</label>
+                            <textarea name="message" class="form-control" id="message-text" rows="8"
+                                      placeholder="Message :" required="required"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <main id="main">
+        <h1 class="hidden">Escape Game Addicted</h1>
+        <p id="play">Appuyez sur F11 pour commencer</p>
+        <article id="mainMenu">
+            <h2 class="hidden">Menu principal</h2>
+            <img id="bgImg" src="img/center.png" alt="image du centre commercial addicted">
+        </article>
+        <article id="characterChoice" class="col-xs-12 hidden">
+            <h2 class="hidden">Choix du personnage</h2>
+            <div class="row">
+                <div class="col-12">
+                    <form onsubmit="return false;">
+                        <label for="nameChosen" class="hidden">Choisis ton pseudo</label>
+                        <input type="text" name="name" id="nameChosen" placeholder="Choisis ton pseudo"
+                               autocomplete="off">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="img/flecheGauche.png" class="flecheImg" alt="fleche haut de personnage précédent"
+                         onclick="changeCharacter('top', 'previous')">
+                </div>
+                <div class="col-xs-6">
+                    <img id="characterImgTop" src="img/characters/persofemme1haut.png" alt="haut de personnage"
+                         class="characterImgTop">
+                </div>
+                <div class="col-xs-3">
+                    <img src="img/flecheDroite.png" class="flecheImg" alt="fleche haut de personnage suivant"
+                         onclick="changeCharacter('top', 'next')">
+                </div>
+            </div>
+            <div class="row" id="characterChoiceBottom">
+                <div class="col-xs-3">
+                    <img src="img/flecheGauche.png" class="flecheImg" alt="fleche bas de personnage suivant"
+                         onclick="changeCharacter('bottom', 'previous')">
+                </div>
+                <div class="col-xs-6">
+                    <img id="characterImgBottom" src="img/characters/persofemme1bas.png" alt="bas de personnage"
+                         class="characterImgBottom">
+                </div>
+                <div class="col-xs-3">
+                    <img src="img/flecheDroite.png" class="flecheImg" alt="fleche bas de personnage suivant"
+                         onclick="changeCharacter('bottom', 'next')">
+                </div>
+            </div>
+        </article>
+        <article id="level1" class="hidden">
+            <h2>Niveau 1</h2>
+            <img src="img/niveau1.png" class="imageNiveaux" alt="niveau 1" usemap="#Map"/>
+            <map name="Map" id="Map">
+                <area alt="" title="" shape="poly" coords="336,132,351,130,353,155,339,161"
+                      onclick="loadLevel('level2')"/>
+                <!--l'attribut href sur area est volontairement non renseigné pour que l'utilisateur ne puisse pas voir la bule de lien en bas du navigateur au survol de la zone-->
+            </map>
+            <p class="levelMainText"> Je suis la tenue indispensable aux americaines pour leur bal de promo, qui
+                suis-je ?</p>
+            <p class="levelSecondaryText">Je me cache dans l'image, sauras-tu me retrouver ?</p>
+        </article>
+        <article id="level2" class="hidden">
+            <h2>Niveau 2</h2>
+            <table id="tapis">
+                <tr>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                </tr>
+                <tr>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+                    <td><img src="memory/img/fondcarte.jpg" alt="carte face verso"/></td>
+
+                </tr>
+            </table>
+            <!--<button onclick="loadLevel('level3')">Cheat</button>-->
+            <!--décommenter la ligne du dessus pour pouvoir passer les niveaux en 1 clic-->
+        </article>
+        <article id="level3" class="hidden">
+            <h2>Niveau 3</h2>
+            <img src="img/niveau3.png" class="imageNiveaux" alt="niveau 3" usemap="#Map2"/>
+            <map name="Map2" id="Map2">
+                <area alt="" title="" shape="poly" coords="274,268,306,284,303,297,275,286"
+                      onclick="loadLevel('level4')"/>
+            </map>
+            <p class="levelMainText"> Je suis la boisson preferee d'Homer Simpson, qui suis-je ?</p>
+            <p class="levelSecondaryText">Je me cache dans l'image, sauras-tu me retrouver ?</p>
+        </article>
+        <article id="level4" class="hidden">
+            <h2>Niveau 4</h2>
+            <canvas id="myCanvas" width="682" height="450"></canvas>
+        </article>
+        <article id="level5" class="imageNiveaux hidden">
+            <h2>Niveau 5</h2>
+            <img src="img/niveau5.png" class="imageNiveaux" alt="niveau 5" usemap="#Map3"/>
+            <map name="Map3" id="Map3">
+                <area alt="" title="" shape="poly" coords="274,268,306,284,303,297,275,286"
+                      onclick="loadLevel('level6')"/>
+                <area alt="" title="" shape="poly" coords="612,303,628,316,621,328,607,320"
+                      onclick="loadLevel('level6')"/>
+                <area alt="" title="" shape="poly" coords="285,118,307,132,294,153,279,139"
+                      onclick="loadLevel('level6')"/>
+                <area alt="" title="" shape="poly" coords="370,168,385,173,378,193,364,191"
+                      onclick="loadLevel('level6')"/>
+            </map>
+            <p class="levelMainText"> 77% des americains en possedent un , qui suis-je ?</p>
+            <p class="levelSecondaryText">Je me cache dans l'image, sauras-tu me retrouver ?</p>
+        </article>
+        <article id="level6" class="imageNiveaux hidden">
+            <h2>Niveau 6</h2>
+            <img src="img/niveau6.png" class="imageNiveaux" alt="niveau 4" usemap="#Map4"/>
+            <map name="Map4" id="Map4">
+                <area alt="" title="" shape="poly" coords="309,273,357,279,352,314,310,319"
+                      onclick="loadLevel('won')"/>
+            </map>
+            <p class="levelMainText"> Les americains en mangent 15 kilos par personne et par an en moyenne, qui suis-je
+                ?</p>
+            <p class="levelSecondaryText">Je me cache dans l'image, sauras-tu me retrouver ?</p>
+        </article>
+        <article id="won" class="hidden">
+            <h2 class="hidden">Vous avez gagné</h2>
+            <img class="imageNiveaux" src="img/finGagne.png" alt="image FIN DE JEU GAGNE">
+        </article>
+        <article id="lost" class="hidden">
+            <h2 class="hidden">Vous avez perdu</h2>
+            <img class="imageNiveaux" src="img/finPerdu.png" alt="image FIN DE JEU PERDU">
+        </article>
+    </main>
+</div>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <span class="text-muted">Addicted 2</span>
+            </div>
+            <div class="col-2">
+                <a data-toggle="modal" data-target="#modalContact" href="#modalContact">
+                    Contact
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="site/addicted2.zip" download>
+                    <i class="fa fa-download fa-2" aria-hidden="true"></i>
+                    <span>Sources</span>
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="vitrine/vitrine.zip" download>
+                    <i class="fa fa-download fa-2" aria-hidden="true"></i>
+                    <span>Vitrine</span>
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="soutenance/soutenance.pdf" download>
+                    <i class="fa fa-download fa-2" aria-hidden="true"></i>
+                    <span>Soutenance</span>
+                </a>
+            </div>
+
+            <div id="musicControlsHidden" class="col-2">
+                <audio id="backgroundMusic" src="music/backgroundMusic.mp3" loop autoplay>
+                    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+                </audio>
+                <i class="fa fa-volume-up fa-2" aria-hidden="true"></i>
+                <i id="playPause" class="fa fa-pause fa-2" onclick="playPause()"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script src="main/js/play.js"></script>
+<script src="memory/js/memory.js"></script>
+<script src="casseBriques/js/casseBriques.js"></script>
+</body>
+</html>

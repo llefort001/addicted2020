@@ -1,0 +1,40 @@
+Lucas LEFORT – info >> info
+Romain BARRIO – général >> gestion de projet
+Chloe HANDY – général >> gestion de projet
+Gaelle MORAIS – général >> gestion de projet
+LP Métiers du Numérique 2017-18, projet tutoré ACO.Info de mini sites web
+Le projet
+Le concept de notre mini-site reprend l’idée d'une escape game, où l’objectif de jeu est de
+s’échapper d’un endroit clos (accueil.jpg).
+Notre appui de base était la vidéo Acid Rain de LORN dans laquelle était mis en avant un groupe de
+pompom girl possédé dans un décor américain, dans un décor obscur où la mort semblait avoir fait
+surface.
+L’analyse a permis de diriger divers axes d’études dont un qui fera l’objet de départ à la conception
+de notre projet : «la consommation abusive »
+Celui-ci a pour but de permettre une meilleure prise de conscience car les utilisateurs sont en
+totale immersion. De plus, l’escape gamme permet de véhiculer l’idée de “lutte” pour s’en sortir et
+réussir à s’évader, ce qui fait le lien avec le clip où elles luttent contre la mort.
+À travers notre jeu nous avons conservé l’idée de soulever les problèmes de société de
+consommation abusive américaine liés aux divers stéréotypes tels que l’apparence (choixPersonnage.jpg), la nourriture,
+la socialisation, de façon plus subtile par le biais d’énigmes (niveau1.jpg) à l’entrée de chaque niveaux.
+L’intérêt est de faire réagir et de laisser un temps de réflexion à l’utilisateur. L’utilisateur qui lui est
+une personne de 17 à 30 ans.
+Nous avons conservé cette idée afin de le retranscrire sur une plateforme numérique.
+Un jeu composé d’un temps limité, d’énigmes et de mini jeux(memory.jpg).
+Dans un esprit psychédélique et bucolique.
+La mise en place du mini site
+Le projet de mini site consiste à concevoir un support numérique tenant compte d’une analyse
+préalable
+Le projet de mini site est construit en deux phases :
+ - une première phase d’analyse : un document nous est donné comme point de départ qui
+donne suite à une phase de recherche afin de décrocher un concept dont les réalisations sont
+peu abouties.
+ - une deuxième phase : le concept de base est repris pour avancer le développement et y
+ajouter des interactivités.
+Les logiciels utilisés lors de notre projet, la conception de nos éléments graphiques a été faite avec
+illustrator, par la suite les éléments ont été adapté pour le web avec Photoshop.
+Au niveau de la conception web, nous avons utilisé Cloud 9 pour que le code soit accessible de tous,
+Bootstrap.
+Nous avons créé deux équipes pour optimiser l’avancement du projet. Une équipe qui prépare les
+visuels graphiques, puis une autre qui développe. Régulièrement des points communs se font pour
+mettre en relation les deux domaines.
